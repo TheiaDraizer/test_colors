@@ -113,14 +113,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
   custom_lint:
     dependency: transitive
     description:
@@ -337,7 +329,7 @@ packages:
     source: sdk
     version: "0.0.0"
   solid_lints:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: solid_lints
       sha256: "59e93651df7d2158681ca3baa41b9953f9caf02cb7528a50e9ede823f151694a"

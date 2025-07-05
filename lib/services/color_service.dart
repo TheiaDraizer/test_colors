@@ -28,14 +28,12 @@ class ColorService {
   ColorTween? _colorTween;
 
   /// The duration of the color transition in seconds
-  late int _transitionDurationInSeconds;
+  static const int _transitionDurationInSeconds = 2;
 
   /// Initialize the color service
   ColorService({
     required TickerProvider vsync,
-    required int transitionDurationInSeconds,
   }) {
-    _transitionDurationInSeconds = transitionDurationInSeconds;
     animationController = AnimationController(
       vsync: vsync,
       duration: Duration(seconds: _transitionDurationInSeconds),
@@ -84,7 +82,10 @@ class ColorService {
   }
 
   /// Starts animated transition to a random color
-  void startColorTransition() {
+  void startColorTransition({
+    int durationInSeconds = _transitionDurationInSeconds,
+  }) {
+    animationController.duration = Duration(seconds: durationInSeconds);
     final Color targetColor = _generateRandomColor();
     _colorTween = ColorTween(begin: color.value, end: targetColor);
     animationController.reset();
